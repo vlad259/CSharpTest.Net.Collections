@@ -1,0 +1,31 @@
+﻿<Properties StartupItem="src/CSharpTest.Net.Collections/CSharpTest.Net.Collections.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/CSharpTest.Net.CollectionsTest/TestSetList.cs">
+    <Files>
+      <File FileName="src/CSharpTest.Net.Collections/Collections/BPlusTree.cs" Line="350" Column="41" />
+      <File FileName="src/CSharpTest.Net.BPlusTreeTest/ThreadedBTreeTest.cs" Line="189" Column="31" />
+      <File FileName="src/CSharpTest.Net.CollectionsTest/TestSetList.cs" Line="334" Column="26" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CSharpTest.Net.Collections" expanded="True" selected="True">
+            <Node name="CSharpTest.Net.BPlusTree.Test" expanded="True" />
+            <Node name="CSharpTest.Net.Collections" expanded="True">
+              <Node name="Collections" expanded="True" />
+            </Node>
+            <Node name="CSharpTest.Net.Collections.Test" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../Comms/Comms/LowLevel/HTTPClient.cs" line="127" offsetX="317" offsetY="1770" expression="_with1" liveUpdate="False" />
+    <Watch file="../../TradeClient1/PositionsView.xib.cs" line="515" offsetX="432" offsetY="6750" expression="columnTypes" liveUpdate="False" />
+    <Watch file="../../iOSTools/ViewUtils.cs" line="30" offsetX="403" offsetY="435" expression="target" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>
