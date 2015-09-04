@@ -1,4 +1,4 @@
-CSharpTest.Net.Collections
+CSharpTest.Net.Collections - fork for Xamarin
 =======================
 
 CSharpTest.Net.Collections (moved from https://code.google.com/p/csharptest-net/)
