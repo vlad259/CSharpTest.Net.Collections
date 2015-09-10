@@ -1,18 +1,38 @@
-﻿<Properties StartupItem="src/CSharpTest.Net.BPlusTreeTest/CSharpTest.Net.BPlusTree.Test.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="src/CSharpTest.Net.Collections/IO/TempFile.cs">
+﻿<Properties StartupItem="TestCollections/TestCollections.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.4" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="TestCollections/ThreadedMassInsertTest.cs">
     <Files>
-      <File FileName="src/CSharpTest.Net.Collections/Collections/BPlusTree.cs" Line="1" Column="1" />
-      <File FileName="src/CSharpTest.Net.BPlusTreeTest/ThreadedBTreeTest.cs" Line="1" Column="1" />
-      <File FileName="src/CSharpTest.Net.CollectionsTest/TestSetList.cs" Line="1" Column="1" />
+      <File FileName="src/CSharpTest.Net.Collections/CmdTool.config" Line="1" Column="1" />
+      <File FileName="src/CSharpTest.Net.Collections/Collections/SetList.cs" Line="1" Column="1" />
+      <File FileName="src/CSharpTest.Net.Collections/README.htm" Line="1" Column="1" />
+      <File FileName="Collections-iOS/Collections/BPlusTree.cs" Line="1" Column="1" />
+      <File FileName="Collections-iOS/Exceptions.cs" Line="1" Column="1" />
+      <File FileName="TestCollections/UnitTestAppDelegate.cs" Line="1" Column="1" />
+      <File FileName="TestCollections/Main.cs" Line="1" Column="1" />
+      <File FileName="src/CSharpTest.Net.BPlusTreeTest/BasicMemoryTests.cs" Line="1" Column="1" />
+      <File FileName="TestCollections/Crypto/Hash.cs" Line="1" Column="1" />
+      <File FileName="TestCollections/Threading/IWorkQueue.cs" Line="1" Column="1" />
+      <File FileName="TestCollections/Threading/WorkQueue.cs" Line="1" Column="1" />
+      <File FileName="TestCollections/MissingNetStuff.cs" Line="1" Column="1" />
+      <File FileName="TestCollections/TestInfo.cs" Line="1" Column="1" />
+      <File FileName="TestCollections/ThreadedBTreeTest.cs" Line="1" Column="1" />
+      <File FileName="TestCollections/BasicTests.cs" Line="1" Column="1" />
+      <File FileName="src/CSharpTest.Net.BPlusTreeTest/TestMultiInstance.cs" Line="1" Column="1" />
+      <File FileName="TestCollections/TestMultiInstance.cs" Line="1" Column="1" />
       <File FileName="src/CSharpTest.Net.Collections/IO/TransactedCompoundFile.cs" Line="1" Column="1" />
-      <File FileName="src/CSharpTest.Net.BPlusTreeTest/TestFileSerialized.cs" Line="34" Column="29" />
-      <File FileName="src/CSharpTest.Net.BPlusTreeTest/Threading/WorkQueue.cs" Line="1" Column="1" />
-      <File FileName="src/CSharpTest.Net.Collections/IO/TempFile.cs" Line="184" Column="39" />
+      <File FileName="Collections-iOS/IO/TransactedCompoundFile.cs" Line="1" Column="1" />
+      <File FileName="Collections-iOS/Utils/WeakReference.cs" Line="1" Column="1" />
+      <File FileName="Collections-iOS/Collections/NodeCache.Normal.cs" Line="1" Column="1" />
+      <File FileName="TestCollections/TestFileSerialized.cs" Line="1" Column="1" />
+      <File FileName="TestCollections/ThreadedMassInsertTest.cs" Line="79" Column="14" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/spreadcomattjones/Projects/iPadTest1/External/collections/src/CSharpTest.Net.Collections/IO/TransactedCompoundFile.cs" line="331" column="1" />
+      <Breakpoint file="/Users/spreadcomattjones/Projects/iPadTest1/External/collections/src/CSharpTest.Net.Collections/IO/TransactedCompoundFile.cs" line="344" column="1" />
+      <Breakpoint file="/Users/spreadcomattjones/Projects/iPadTest1/External/collections/Collections-iOS/IO/TransactedCompoundFile.cs" line="318" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>
     <Watch file="../../Comms/Comms/LowLevel/HTTPClient.cs" line="127" offsetX="317" offsetY="1770" expression="_with1" liveUpdate="False" />

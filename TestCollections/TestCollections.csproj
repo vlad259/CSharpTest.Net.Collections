@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{D12714D3-E0E6-4AF2-B06F-B130864021F7}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>TestCollections</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>TestCollections</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchI18n>
+    </MtouchI18n>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <MtouchArch>i386</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <MtouchLink>None</MtouchLink>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchProfiling>true</MtouchProfiling>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <LangVersion>6</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="MonoTouch.NUnitLite" />
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="UnitTestAppDelegate.cs" />
+    <Compile Include="Bases\Comparable.cs" />
+    <Compile Include="Crypto\Hash.cs" />
+    <Compile Include="Reflection\PropertyType.cs" />
+    <Compile Include="Reflection\PropertyValue.cs" />
+    <Compile Include="SampleTypes\DataValue.cs" />
+    <Compile Include="SampleTypes\DataValueSerializer.cs" />
+    <Compile Include="SampleTypes\KeyInfo.cs" />
+    <Compile Include="SampleTypes\KeyInfoComparer.cs" />
+    <Compile Include="SampleTypes\KeyInfoSerializer.cs" />
+    <Compile Include="Shared\Check.cs" />
+    <Compile Include="Threading\IWorkQueue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Threading\WorkQueue.cs" />
+    <Compile Include="BasicMemoryTests.cs" />
+    <Compile Include="BasicTests.cs" />
+    <Compile Include="BasicTestsVersion2.cs" />
+    <Compile Include="SampleCustomTypeTest.cs" />
+    <Compile Include="SequenceTests.cs" />
+    <Compile Include="TestBackupAndRecovery.cs" />
+    <Compile Include="TestBPlusTreeOptions.cs" />
+    <Compile Include="TestBulkInsert.cs" />
+    <Compile Include="TestCollection.cs" />
+    <Compile Include="TestCustomStorage.cs" />
+    <Compile Include="TestDictionary.cs" />
+    <Compile Include="TestFileSerialized.cs" />
+    <Compile Include="TestInfo.cs" />
+    <Compile Include="TestMultiInstance.cs" />
+    <Compile Include="TestSimpleDictionary.cs" />
+    <Compile Include="TestTransactionLog.cs" />
+    <Compile Include="ThreadedBTreeTest.cs" />
+    <Compile Include="ThreadedMassInsertTest.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\Collections-iOS\Collections-iOS.csproj">
+      <Project>{6FFC9A28-31BA-4D15-9D66-9A11169BC07F}</Project>
+      <Name>Collections-iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
