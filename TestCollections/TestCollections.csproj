@@ -27,6 +27,8 @@
     <MtouchI18n>
     </MtouchI18n>
     <LangVersion>6</LangVersion>
+    <CodesignProvision>317a5c8a-ba25-46dc-b0a1-b55d23571b67</CodesignProvision>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -63,9 +65,15 @@
     <MtouchArch>ARMv7, ARM64</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchProfiling>true</MtouchProfiling>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey>iPhone Distribution</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <LangVersion>6</LangVersion>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchI18n>
+    </MtouchI18n>
+    <CodesignProvision>c832bade-4df7-4d64-8c3a-ce3570559879</CodesignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System.Xml" />
