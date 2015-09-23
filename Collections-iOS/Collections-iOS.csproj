@@ -9,6 +9,8 @@
     <RootNamespace>CollectionsiOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>Collections-iOS</AssemblyName>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -60,7 +62,6 @@
     <Compile Include="Collections\IDictionaryEx.cs" />
     <Compile Include="Collections\Interfaces.cs" />
     <Compile Include="Collections\KeyValueComparer.cs" />
-    <Compile Include="Collections\LurchTable.cs" />
     <Compile Include="Collections\MergeSort.cs" />
     <Compile Include="Collections\Node.BulkInsert.cs" />
     <Compile Include="Collections\Node.cs" />
@@ -98,7 +99,6 @@
     <Compile Include="Serialization\LimitedSerializer.cs" />
     <Compile Include="Serialization\PrimitiveSerializer.cs" />
     <Compile Include="Serialization\VariantNumberSerializer.cs" />
-    <Compile Include="Storage\Storage.Cache.cs" />
     <Compile Include="Storage\Storage.Disk.cs" />
     <Compile Include="Storage\Storage.DiskV2.cs" />
     <Compile Include="Storage\Storage.Memory.cs" />
@@ -119,6 +119,8 @@
     <Compile Include="Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Collections\LurchTable.cs" />
+    <Compile Include="Storage\Storage.Cache.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
@@ -127,5 +129,8 @@
       <Generator>CmdTool</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
   </ItemGroup>
 </Project>
