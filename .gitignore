@@ -19,6 +19,7 @@ Release
 *.zip
 *.mdf
 *.snk
+*.userprefs
 
 packages/*/*
 depend/*
