@@ -1,6 +1,15 @@
 ﻿using System;
 
-namespace System.IO {
+namespace System.IO 
+{
+    #if PLATFORM_ANDROID
 
-	public delegate void ErrorEventHandler (object sender, System.IO.ErrorEventArgs e);
+    public class ErrorEventArgs : EventArgs
+    {
+
+    }
+
+    #endif
+
+    public delegate void ErrorEventHandler (object sender, System.IO.ErrorEventArgs e);
 }
