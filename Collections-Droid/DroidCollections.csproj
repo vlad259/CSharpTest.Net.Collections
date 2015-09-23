@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -8,14 +8,14 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{C25005F8-AA49-44B5-8B09-47B7DF55858D}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>DroidCollections</RootNamespace>
+    <RootNamespace>CSharpTest.Net.Serialization</RootNamespace>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
     <AssemblyName>DroidCollections</AssemblyName>
-    <TargetFrameworkVersion>v5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,12 +45,241 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="..\src\CSharpTest.Net.Collections\Exceptions.cs">
+      <Link>CSharpTest.Net.Collections\Exceptions.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Bases\Disposable.cs">
+      <Link>CSharpTest.Net.Collections\Bases\Disposable.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Bases\Equatable.cs">
+      <Link>CSharpTest.Net.Collections\Bases\Equatable.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\BPlusTree.Debug.cs">
+      <Link>CSharpTest.Net.Collections\Collections\BPlusTree.Debug.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\BPlusTree.Options.cs">
+      <Link>CSharpTest.Net.Collections\Collections\BPlusTree.Options.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\BPlusTree.OptionsBase.cs">
+      <Link>CSharpTest.Net.Collections\Collections\BPlusTree.OptionsBase.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\BPlusTree.Recovery.cs">
+      <Link>CSharpTest.Net.Collections\Collections\BPlusTree.Recovery.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\BPlusTree.cs">
+      <Link>CSharpTest.Net.Collections\Collections\BPlusTree.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\BTreeDictionary.cs">
+      <Link>CSharpTest.Net.Collections\Collections\BTreeDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\BTreeList.cs">
+      <Link>CSharpTest.Net.Collections\Collections\BTreeList.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\DisposingList.cs">
+      <Link>CSharpTest.Net.Collections\Collections\DisposingList.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\Element.cs">
+      <Link>CSharpTest.Net.Collections\Collections\Element.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\Enumerator.cs">
+      <Link>CSharpTest.Net.Collections\Collections\Enumerator.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\HashUtilities.cs">
+      <Link>CSharpTest.Net.Collections\Collections\HashUtilities.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\IConcurrentDictionary.cs">
+      <Link>CSharpTest.Net.Collections\Collections\IConcurrentDictionary.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\IDictionaryEx.cs">
+      <Link>CSharpTest.Net.Collections\Collections\IDictionaryEx.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\Interfaces.cs">
+      <Link>CSharpTest.Net.Collections\Collections\Interfaces.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\KeyValueComparer.cs">
+      <Link>CSharpTest.Net.Collections\Collections\KeyValueComparer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\LurchTable.cs">
+      <Link>CSharpTest.Net.Collections\Collections\LurchTable.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\MergeSort.cs">
+      <Link>CSharpTest.Net.Collections\Collections\MergeSort.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\Node.BulkInsert.cs">
+      <Link>CSharpTest.Net.Collections\Collections\Node.BulkInsert.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\Node.Delete.cs">
+      <Link>CSharpTest.Net.Collections\Collections\Node.Delete.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\Node.Insert.cs">
+      <Link>CSharpTest.Net.Collections\Collections\Node.Insert.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\Node.Search.cs">
+      <Link>CSharpTest.Net.Collections\Collections\Node.Search.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\Node.Serialize.cs">
+      <Link>CSharpTest.Net.Collections\Collections\Node.Serialize.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\Node.cs">
+      <Link>CSharpTest.Net.Collections\Collections\Node.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\NodeCache.Base.cs">
+      <Link>CSharpTest.Net.Collections\Collections\NodeCache.Base.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\NodeCache.Full.cs">
+      <Link>CSharpTest.Net.Collections\Collections\NodeCache.Full.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\NodeCache.None.cs">
+      <Link>CSharpTest.Net.Collections\Collections\NodeCache.None.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\NodeCache.Normal.cs">
+      <Link>CSharpTest.Net.Collections\Collections\NodeCache.Normal.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\NodeHandle.cs">
+      <Link>CSharpTest.Net.Collections\Collections\NodeHandle.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\NodePin.cs">
+      <Link>CSharpTest.Net.Collections\Collections\NodePin.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\NodeTransaction.cs">
+      <Link>CSharpTest.Net.Collections\Collections\NodeTransaction.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\OrderedEnumeration.cs">
+      <Link>CSharpTest.Net.Collections\Collections\OrderedEnumeration.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\OrderedKeyValuePairs.cs">
+      <Link>CSharpTest.Net.Collections\Collections\OrderedKeyValuePairs.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\OrdinalList.cs">
+      <Link>CSharpTest.Net.Collections\Collections\OrdinalList.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\SetList.cs">
+      <Link>CSharpTest.Net.Collections\Collections\SetList.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Collections\TransactionLog.cs">
+      <Link>CSharpTest.Net.Collections\Collections\TransactionLog.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\IO\AggregateStream.cs">
+      <Link>CSharpTest.Net.Collections\IO\AggregateStream.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\IO\BinaryComparer.cs">
+      <Link>CSharpTest.Net.Collections\IO\BinaryComparer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\IO\Crc32.cs">
+      <Link>CSharpTest.Net.Collections\IO\Crc32.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\IO\FileStreamFactory.cs">
+      <Link>CSharpTest.Net.Collections\IO\FileStreamFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\IO\FragmentedFile.cs">
+      <Link>CSharpTest.Net.Collections\IO\FragmentedFile.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\IO\IOStream.cs">
+      <Link>CSharpTest.Net.Collections\IO\IOStream.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\IO\StreamCache.cs">
+      <Link>CSharpTest.Net.Collections\IO\StreamCache.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\IO\TempFile.cs">
+      <Link>CSharpTest.Net.Collections\IO\TempFile.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\IO\TransactedCompoundFile.cs">
+      <Link>CSharpTest.Net.Collections\IO\TransactedCompoundFile.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Interfaces\DefaultFactories.cs">
+      <Link>CSharpTest.Net.Collections\Interfaces\DefaultFactories.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Interfaces\ICloneable.cs">
+      <Link>CSharpTest.Net.Collections\Interfaces\ICloneable.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Interfaces\IFactory.cs">
+      <Link>CSharpTest.Net.Collections\Interfaces\IFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Interfaces\ITransactable.cs">
+      <Link>CSharpTest.Net.Collections\Interfaces\ITransactable.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Serialization\ISerializer.cs">
+      <Link>CSharpTest.Net.Collections\Serialization\ISerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Serialization\KeyValueSerializer.cs">
+      <Link>CSharpTest.Net.Collections\Serialization\KeyValueSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Serialization\LimitedSerializer.cs">
+      <Link>CSharpTest.Net.Collections\Serialization\LimitedSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Serialization\PrimitiveSerializer.cs">
+      <Link>CSharpTest.Net.Collections\Serialization\PrimitiveSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Serialization\VariantNumberSerializer.cs">
+      <Link>CSharpTest.Net.Collections\Serialization\VariantNumberSerializer.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Storage\Storage.Cache.cs">
+      <Link>CSharpTest.Net.Collections\Storage\Storage.Cache.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Storage\Storage.Disk.cs">
+      <Link>CSharpTest.Net.Collections\Storage\Storage.Disk.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Storage\Storage.DiskV2.cs">
+      <Link>CSharpTest.Net.Collections\Storage\Storage.DiskV2.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Storage\Storage.Memory.cs">
+      <Link>CSharpTest.Net.Collections\Storage\Storage.Memory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Synchronization\ExclusiveLocking.cs">
+      <Link>CSharpTest.Net.Collections\Synchronization\ExclusiveLocking.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Synchronization\ILockStrategy.cs">
+      <Link>CSharpTest.Net.Collections\Synchronization\ILockStrategy.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Synchronization\IgnoreLocking.cs">
+      <Link>CSharpTest.Net.Collections\Synchronization\IgnoreLocking.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Synchronization\LockFactory.cs">
+      <Link>CSharpTest.Net.Collections\Synchronization\LockFactory.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Synchronization\ReadLock.cs">
+      <Link>CSharpTest.Net.Collections\Synchronization\ReadLock.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Synchronization\ReaderWriterLocking.cs">
+      <Link>CSharpTest.Net.Collections\Synchronization\ReaderWriterLocking.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Synchronization\SafeLock.cs">
+      <Link>CSharpTest.Net.Collections\Synchronization\SafeLock.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Synchronization\SimpleReadWriteLocking.cs">
+      <Link>CSharpTest.Net.Collections\Synchronization\SimpleReadWriteLocking.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Synchronization\WriteLock.cs">
+      <Link>CSharpTest.Net.Collections\Synchronization\WriteLock.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Synchronization\WriterOnlyLocking.cs">
+      <Link>CSharpTest.Net.Collections\Synchronization\WriterOnlyLocking.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Utils\Check.cs">
+      <Link>CSharpTest.Net.Collections\Utils\Check.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Utils\ObjectKeepAlive.cs">
+      <Link>CSharpTest.Net.Collections\Utils\ObjectKeepAlive.cs</Link>
+    </Compile>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Utils\WeakReference.cs">
+      <Link>CSharpTest.Net.Collections\Utils\WeakReference.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
+    <None Include="..\src\CSharpTest.Net.Collections\Resources.resx">
+      <Link>CSharpTest.Net.Collections\Resources.resx</Link>
+    </None>
+    <Compile Include="..\src\CSharpTest.Net.Collections\Resources.Designer.cs">
+      <Link>CSharpTest.Net.Collections\Resources.Designer.cs</Link>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="CSharpTest.Net.Collections\" />
+  </ItemGroup>
 </Project>
