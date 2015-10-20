@@ -43,7 +43,7 @@ namespace CSharpTest.Net.BPlusTree.Test
         {
             get
             {
-                return new BPlusTree<int, string>.Options(new PrimitiveSerializer(), new PrimitiveSerializer())
+				return new BPlusTree<int, string>.Options(new PrimitiveSerializer(), new PrimitiveSerializer(),Comparer<int>.Default)
                 {
                     BTreeOrder = 4,
                     LockingFactory = new IgnoreLockFactory(),
@@ -166,7 +166,7 @@ namespace CSharpTest.Net.BPlusTree.Test
                 TempFile = TempFile ?? new TempFile();
 
                 BPlusTree<int, string> tree = new BPlusTree<int, string>(
-                    new BPlusTree<int, string>.Options(PrimitiveSerializer.Instance, PrimitiveSerializer.Instance)
+					new BPlusTree<int, string>.Options(PrimitiveSerializer.Instance, PrimitiveSerializer.Instance,Comparer<int>.Default)
                         {
                             BTreeOrder = 16,
                             LockingFactory = new IgnoreLockFactory(),

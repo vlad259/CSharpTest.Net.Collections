@@ -36,7 +36,7 @@ namespace CSharpTest.Net.BPlusTree.Test
         {
             get
             {
-                var opts = new BPlusTree<int, string>.Options(new PrimitiveSerializer(), new PrimitiveSerializer());
+				var opts = new BPlusTree<int, string>.Options(new PrimitiveSerializer(), new PrimitiveSerializer(), Comparer<int>.Default);
                 return opts;
             }
         }

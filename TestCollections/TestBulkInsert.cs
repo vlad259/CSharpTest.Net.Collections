@@ -32,7 +32,7 @@ namespace CSharpTest.Net.BPlusTree.Test
         {
             get
             {
-                return new BPlusTree<int, string>.Options(new PrimitiveSerializer(), new PrimitiveSerializer())
+				return new BPlusTree<int, string>.Options(new PrimitiveSerializer(), new PrimitiveSerializer(),Comparer<int>.Default)
                 {
                     BTreeOrder = 4,
                     LockingFactory = new IgnoreLockFactory(),

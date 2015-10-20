@@ -11,6 +11,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+using CSharpTest.Net.Collections;
+
+
 #endregion
 using System.Collections.Generic;
 using NUnit.Framework;
@@ -18,14 +21,17 @@ using System;
 
 namespace CSharpTest.Net.Library.Test
 {
-    public abstract class TestGenericCollection<TList, TItem> 
-        where TList : ICollection<TItem>, new()
+    public abstract class TestGenericCollection<TList, TItem, TKey> 
+		where TList : ICollection<TItem>, IKeyComparer<TKey>, new()
     {
+		protected IEqualityComparer<TKey> Comparer;
+
         protected abstract TItem[] GetSample();
 
         protected TList CreateSample(TItem[] items)
         {
             TList list = new TList();
+			list.KeyComparer = Comparer;
 
             int count = 0;
             Assert.AreEqual(count, list.Count);
@@ -42,6 +48,7 @@ namespace CSharpTest.Net.Library.Test
         public void TestAddRemove()
         {
             TList list = new TList();
+			list.KeyComparer = Comparer;
             TItem[] items = GetSample();
 
             int count = 0;

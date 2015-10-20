@@ -22,6 +22,21 @@ namespace CSharpTest.Net.Collections
 {
     partial class BPlusTree<TKey, TValue>
     {
+		class InnoverpikkComparer : IEqualityComparer<IStorageHandle>
+		{
+			#region IEqualityComparer implementation
+			public bool Equals (IStorageHandle x, IStorageHandle y)
+			{
+				return x==y;
+			}
+			public int GetHashCode (IStorageHandle obj)
+			{
+				return obj.GetHashCode ();
+			}
+			#endregion
+			
+		}
+
         class StorageCache : INodeStorage, ITransactable, INodeStoreWithCount
         {
             private readonly INodeStorage _store;
@@ -39,9 +54,11 @@ namespace CSharpTest.Net.Collections
                 _writeBehindFunc = Flush;
                 _asyncWriteBehind = null;
 
+				var pikk=new InnoverpikkComparer();
+
                 _store = store;
-                _cache = new LurchTable<IStorageHandle, object>(  LurchTableOrder.Access, sizeLimit, 1000000, sizeLimit >> 4, 1000, EqualityComparer<IStorageHandle>.Default);
-                _dirty = new LurchTable<IStorageHandle, object>(LurchTableOrder.Modified, sizeLimit, 1000000, sizeLimit >> 4, 1000, EqualityComparer<IStorageHandle>.Default);
+				_cache = new LurchTable<IStorageHandle, object>(  LurchTableOrder.Access, sizeLimit, 1000000, sizeLimit >> 4, 1000, pikk);
+				_dirty = new LurchTable<IStorageHandle, object>(LurchTableOrder.Modified, sizeLimit, 1000000, sizeLimit >> 4, 1000, pikk);
                 _dirty.ItemRemoved += OnItemRemoved;
             }
 

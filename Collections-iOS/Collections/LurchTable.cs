@@ -35,6 +35,18 @@ namespace CSharpTest.Net.Collections
         Access,
     }
 
+	/// <summary>
+	/// Key comparer interface
+	/// </summary>
+	public interface IKeyComparer<T>
+	{
+		/// <summary>
+		/// Get or set the key comparer
+		/// </summary>
+		/// <value>The key comparer.</value>
+		IEqualityComparer<T> KeyComparer { get; set; }
+	}
+
     /// <summary>
     /// LurchTable stands for "Least Used Recently Concurrent Hash Table" and has definate
     /// similarities to both the .NET 4 ConcurrentDictionary as well as Java's LinkedHashMap.
@@ -60,7 +72,7 @@ namespace CSharpTest.Net.Collections
         private const int OverAlloc = 128;
         private const int FreeSlots = 32;
 
-        private readonly IEqualityComparer<TKey> _comparer;
+        protected IEqualityComparer<TKey> _comparer;
         private readonly int _hsize, _lsize, _limit;
         private readonly int _allocSize, _shift, _shiftMask;
         private readonly LurchTableOrder _ordering;
@@ -72,21 +84,21 @@ namespace CSharpTest.Net.Collections
         private int _used, _count;
         private int _allocNext, _freeVersion;
 
-        /// <summary>Creates a LurchTable that can store up to (capacity) items efficiently.</summary>
-        public LurchTable(int capacity)
-            : this(LurchTableOrder.None, int.MaxValue, capacity >> 1, capacity >> 4, capacity >> 8, EqualityComparer<TKey>.Default) { }
+        // <summary>Creates a LurchTable that can store up to (capacity) items efficiently.</summary>
+		public LurchTable(int capacity,IEqualityComparer<TKey> comparer)
+            : this(LurchTableOrder.None, int.MaxValue, capacity >> 1, capacity >> 4, capacity >> 8, comparer) { }
 
-        /// <summary>Creates a LurchTable that can store up to (capacity) items efficiently.</summary>
-        public LurchTable(int capacity, LurchTableOrder ordering)
-            : this(ordering, int.MaxValue, capacity >> 1, capacity >> 4, capacity >> 8, EqualityComparer<TKey>.Default) { }
+        // <summary>Creates a LurchTable that can store up to (capacity) items efficiently.</summary>
+        //public LurchTable(int capacity, LurchTableOrder ordering)
+        //    : this(ordering, int.MaxValue, capacity >> 1, capacity >> 4, capacity >> 8, EqualityComparer<TKey>.Default) { }
 
         /// <summary>Creates a LurchTable that can store up to (capacity) items efficiently.</summary>
         public LurchTable(int capacity, LurchTableOrder ordering, IEqualityComparer<TKey> comparer)
             : this(ordering, int.MaxValue, capacity >> 1, capacity >> 4, capacity >> 8, comparer) { }
 
-        /// <summary>Creates a LurchTable that orders items by (ordering) and removes items once the specified (limit) is reached.</summary>
-        public LurchTable(LurchTableOrder ordering, int limit)
-            : this(ordering, limit, limit >> 1, limit >> 4, limit >> 8, EqualityComparer<TKey>.Default) { }
+        // <summary>Creates a LurchTable that orders items by (ordering) and removes items once the specified (limit) is reached.</summary>
+        //public LurchTable(LurchTableOrder ordering, int limit)
+        //    : this(ordering, limit, limit >> 1, limit >> 4, limit >> 8, EqualityComparer<TKey>.Default) { }
 
         /// <summary>Creates a LurchTable that orders items by (ordering) and removes items once the specified (limit) is reached.</summary>
         public LurchTable(LurchTableOrder ordering, int limit, IEqualityComparer<TKey> comparer)

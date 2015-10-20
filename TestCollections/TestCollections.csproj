@@ -125,6 +125,10 @@
     <Compile Include="TestTransactionLog.cs" />
     <Compile Include="ThreadedBTreeTest.cs" />
     <Compile Include="ThreadedMassInsertTest.cs" />
+    <Compile Include="TestOrderedEnumeration.cs" />
+    <Compile Include="ExampleCode.cs" />
+    <Compile Include="TestLurchTable.cs" />
+    <Compile Include="TestGenericCollection.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>

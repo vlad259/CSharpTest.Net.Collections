@@ -256,9 +256,9 @@ namespace CSharpTest.Net.Collections
             /// <summary>
             /// Constructs the options configuration to initialize a BPlusTree instance using the default Comparer for TKey
             /// </summary>
-            public Options(ISerializer<TKey> keySerializer, ISerializer<TValue> valueSerializer)
-                : this(keySerializer, valueSerializer, Comparer<TKey>.Default)
-            { }
+            //public Options(ISerializer<TKey> keySerializer, ISerializer<TValue> valueSerializer)
+            //    : this(keySerializer, valueSerializer, Comparer<TKey>.Default)
+            //{ }
 
             /// <summary>
             /// Constructs the options configuration to initialize a BPlusTree instance

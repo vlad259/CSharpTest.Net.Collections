@@ -37,8 +37,8 @@ namespace CSharpTest.Net.Collections
         private KeyCollection _keys;
         private ValueCollection _values;
 
-        /// <summary>Constructs a BTreeList instance.</summary>
-        public BTreeDictionary() : this(DefaultOrder, Comparer<TKey>.Default) { }
+        // <summary>Constructs a BTreeList instance.</summary>
+        //public BTreeDictionary() : this(DefaultOrder, Comparer<TKey>.Default) { }
         /// <summary>Constructs a BTreeList instance.</summary>
         public BTreeDictionary(IComparer<TKey> comparer) : this(DefaultOrder, comparer) { }
         /// <summary>Constructs a BTreeList instance.</summary>
@@ -55,8 +55,8 @@ namespace CSharpTest.Net.Collections
             _kvcomparer = new KvComparer(_comparer);
             Clear();
         }
-        /// <summary>Constructs a BTreeList instance.</summary>
-        public BTreeDictionary(IEnumerable<KeyValuePair<TKey, TValue>> copyFrom) : this(DefaultOrder, Comparer<TKey>.Default, copyFrom) { }
+        // <summary>Constructs a BTreeList instance.</summary>
+        //public BTreeDictionary(IEnumerable<KeyValuePair<TKey, TValue>> copyFrom) : this(DefaultOrder, Comparer<TKey>.Default, copyFrom) { }
         /// <summary>Constructs a BTreeList instance.</summary>
         public BTreeDictionary(IComparer<TKey> comparer, IEnumerable<KeyValuePair<TKey, TValue>> copyFrom) : this(DefaultOrder, comparer, copyFrom) { }
         /// <summary>Constructs a BTreeList instance.</summary>

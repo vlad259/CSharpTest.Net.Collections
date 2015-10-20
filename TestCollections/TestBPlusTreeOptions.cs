@@ -28,7 +28,7 @@ namespace CSharpTest.Net.BPlusTree.Test
         [Test]
         public void TestICloneable()
         {
-            ICloneable opt = new BPlusTree<int, int>.Options(PrimitiveSerializer.Int32, PrimitiveSerializer.Int32) 
+			ICloneable opt = new BPlusTree<int, int>.Options(PrimitiveSerializer.Int32, PrimitiveSerializer.Int32,Comparer<int>.Default) 
             {
                 CreateFile = CreatePolicy.IfNeeded,
                 BTreeOrder = 4
@@ -45,7 +45,7 @@ namespace CSharpTest.Net.BPlusTree.Test
         {
             using (TempFile file = new TempFile())
             {
-                var opt = new BPlusTree<int, int>.Options(PrimitiveSerializer.Int32, PrimitiveSerializer.Int32)
+				var opt = new BPlusTree<int, int>.Options(PrimitiveSerializer.Int32, PrimitiveSerializer.Int32,Comparer<int>.Default)
                 {
                     CreateFile = CreatePolicy.Always,
                     FileName = file.TempPath,
@@ -77,7 +77,7 @@ namespace CSharpTest.Net.BPlusTree.Test
         [Test]
         public void TestCloneWithCallLockV1()
         {
-            var options = new BPlusTree<int, int>.Options(PrimitiveSerializer.Int32, PrimitiveSerializer.Int32)
+			var options = new BPlusTree<int, int>.Options(PrimitiveSerializer.Int32, PrimitiveSerializer.Int32,Comparer<int>.Default)
             {
                 CreateFile = CreatePolicy.IfNeeded,
                 BTreeOrder = 4

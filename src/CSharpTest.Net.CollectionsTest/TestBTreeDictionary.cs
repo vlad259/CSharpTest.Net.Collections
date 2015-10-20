@@ -121,7 +121,7 @@ namespace CSharpTest.Net.Library.Test
         public void TestIndexer()
         {
             BTreeDictionary<int, string> data = new BTreeDictionary<int, string>(Comparer, GetSample());
-            BTreeDictionary<int, string> copy = new BTreeDictionary<int, string>();
+            BTreeDictionary<int, string> copy = new BTreeDictionary<int, string>(Comparer);
             copy.AddRange(data);
             Assert.AreEqual(copy.Count, data.Count);
             foreach (int key in data.Keys)
@@ -167,7 +167,7 @@ namespace CSharpTest.Net.Library.Test
         public void TestKeyValueCollections()
         {
             List<KeyValuePair<int, string>> sample = new List<KeyValuePair<int,string>>(GetSample());
-            BTreeDictionary<int, string> data = new BTreeDictionary<int, string>(sample);
+            BTreeDictionary<int, string> data = new BTreeDictionary<int, string>(Comparer,sample);
             //Key collection
             Assert.AreEqual(data.Count, data.Keys.Count);
             Assert.IsTrue(data.Keys.IsReadOnly);
@@ -225,7 +225,7 @@ namespace CSharpTest.Net.Library.Test
         [Test]
         public void TestFirstAndLast()
         {
-            BTreeDictionary<int, string> data = new BTreeDictionary<int, string>();
+            BTreeDictionary<int, string> data = new BTreeDictionary<int, string>(Comparer);
             data.Add(1, "a");
             data.Add(2, "b");
             data.Add(3, "c");

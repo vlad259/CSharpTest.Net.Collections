@@ -29,7 +29,7 @@ namespace CSharpTest.Net.BPlusTree.Test
             public BPlusTree<int, string> Create()
             {
                 BPlusTree<int, string> tree = new BPlusTree<int, string>(
-                    new BPlusTree<int, string>.Options(PrimitiveSerializer.Instance, PrimitiveSerializer.Instance)
+					new BPlusTree<int, string>.Options(PrimitiveSerializer.Instance, PrimitiveSerializer.Instance,Comparer<int>.Default)
                         {
                             BTreeOrder = 4,
                             LockingFactory = new IgnoreLockFactory()

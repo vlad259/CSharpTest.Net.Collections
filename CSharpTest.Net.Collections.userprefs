@@ -1,30 +1,13 @@
-﻿<Properties StartupItem="TestCollections/TestCollections.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.4" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="TestCollections/ThreadedMassInsertTest.cs">
+﻿<Properties StartupItem="TestCollections/TestCollections.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.0" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Collections-iOS/Collections/LurchTable.cs">
     <Files>
-      <File FileName="src/CSharpTest.Net.Collections/CmdTool.config" Line="1" Column="1" />
-      <File FileName="src/CSharpTest.Net.Collections/Collections/SetList.cs" Line="1" Column="1" />
-      <File FileName="src/CSharpTest.Net.Collections/README.htm" Line="1" Column="1" />
-      <File FileName="Collections-iOS/Collections/BPlusTree.cs" Line="1" Column="1" />
-      <File FileName="Collections-iOS/Exceptions.cs" Line="1" Column="1" />
-      <File FileName="TestCollections/UnitTestAppDelegate.cs" Line="1" Column="1" />
+      <File FileName="Collections-iOS/Collections/LurchTable.cs" Line="1419" Column="26" />
+      <File FileName="TestCollections/TestLurchTable.cs" Line="1" Column="1" />
       <File FileName="TestCollections/Main.cs" Line="1" Column="1" />
-      <File FileName="src/CSharpTest.Net.BPlusTreeTest/BasicMemoryTests.cs" Line="1" Column="1" />
-      <File FileName="TestCollections/Crypto/Hash.cs" Line="1" Column="1" />
-      <File FileName="TestCollections/Threading/IWorkQueue.cs" Line="1" Column="1" />
-      <File FileName="TestCollections/Threading/WorkQueue.cs" Line="1" Column="1" />
-      <File FileName="TestCollections/MissingNetStuff.cs" Line="1" Column="1" />
-      <File FileName="TestCollections/TestInfo.cs" Line="1" Column="1" />
-      <File FileName="TestCollections/ThreadedBTreeTest.cs" Line="1" Column="1" />
-      <File FileName="TestCollections/BasicTests.cs" Line="1" Column="1" />
-      <File FileName="src/CSharpTest.Net.BPlusTreeTest/TestMultiInstance.cs" Line="1" Column="1" />
-      <File FileName="TestCollections/TestMultiInstance.cs" Line="1" Column="1" />
-      <File FileName="src/CSharpTest.Net.Collections/IO/TransactedCompoundFile.cs" Line="1" Column="1" />
-      <File FileName="Collections-iOS/IO/TransactedCompoundFile.cs" Line="1" Column="1" />
-      <File FileName="Collections-iOS/Utils/WeakReference.cs" Line="1" Column="1" />
-      <File FileName="Collections-iOS/Collections/NodeCache.Normal.cs" Line="1" Column="1" />
-      <File FileName="TestCollections/TestFileSerialized.cs" Line="1" Column="1" />
-      <File FileName="TestCollections/ThreadedMassInsertTest.cs" Line="79" Column="14" />
+      <File FileName="TestCollections/TestGenericCollection.cs" Line="1" Column="1" />
+      <File FileName="src/CSharpTest.Net.CollectionsTest/TestGenericCollection.cs" Line="1" Column="1" />
+      <File FileName="src/CSharpTest.Net.Collections/Collections/LurchTable.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -32,6 +15,10 @@
       <Breakpoint file="/Users/spreadcomattjones/Projects/iPadTest1/External/collections/src/CSharpTest.Net.Collections/IO/TransactedCompoundFile.cs" line="331" column="1" />
       <Breakpoint file="/Users/spreadcomattjones/Projects/iPadTest1/External/collections/src/CSharpTest.Net.Collections/IO/TransactedCompoundFile.cs" line="344" column="1" />
       <Breakpoint file="/Users/spreadcomattjones/Projects/iPadTest1/External/collections/Collections-iOS/IO/TransactedCompoundFile.cs" line="318" column="1" />
+      <Breakpoint file="/Users/spreadcomattjones/Projects/iPadTest1/External/collections/src/CSharpTest.Net.BPlusTreeTest/BasicMemoryTests.cs" line="28" column="1" />
+      <Breakpoint file="/Users/spreadcomattjones/Projects/iPadTest1/External/collections/src/CSharpTest.Net.CollectionsTest/TestLurchTable.cs" line="287" column="1" />
+      <Breakpoint file="/Users/spreadcomattjones/Projects/iPadTest1/External/collections/src/CSharpTest.Net.CollectionsTest/TestGenericCollection.cs" line="50" column="1" />
+      <Catchpoint exceptionName="System.NullReferenceException" includeSubclasses="True" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>

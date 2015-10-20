@@ -35,6 +35,18 @@ namespace CSharpTest.Net.Collections
         Access,
     }
 
+	/// <summary>
+	/// Key comparer interface
+	/// </summary>
+	public interface IKeyComparer<T>
+	{
+		/// <summary>
+		/// Get or set the key comparer
+		/// </summary>
+		/// <value>The key comparer.</value>
+		IEqualityComparer<T> KeyComparer { get; set; }
+	}
+
     /// <summary>
     /// LurchTable stands for "Least Used Recently Concurrent Hash Table" and has definate
     /// similarities to both the .NET 4 ConcurrentDictionary as well as Java's LinkedHashMap.
@@ -45,7 +57,7 @@ namespace CSharpTest.Net.Collections
     /// <typeparam name="TKey">The type of keys in the dictionary.</typeparam>
     /// <typeparam name="TValue">The type of values in the dictionary.</typeparam>
     public class LurchTable<TKey, TValue> : IDictionary<TKey, TValue>,
-        IDictionaryEx<TKey, TValue>, IConcurrentDictionary<TKey, TValue>
+		IDictionaryEx<TKey, TValue>, IConcurrentDictionary<TKey, TValue>, IKeyComparer<TKey>
     {
         /// <summary> Method signature for the ItemUpdated event </summary>
         public delegate void ItemUpdatedMethod(KeyValuePair<TKey, TValue> previous, KeyValuePair<TKey, TValue> next);
@@ -60,7 +72,20 @@ namespace CSharpTest.Net.Collections
         private const int OverAlloc = 128;
         private const int FreeSlots = 32;
 
-        private readonly IEqualityComparer<TKey> _comparer;
+		/// <summary>
+		/// Get or set the key comparer
+		/// </summary>
+		/// <value>The key comparer.</value>
+		public IEqualityComparer<TKey> KeyComparer {
+			get {
+				return _comparer;
+			}
+			set {
+				_comparer = value;
+			}
+		}
+
+        private IEqualityComparer<TKey> _comparer;
         private readonly int _hsize, _lsize, _limit;
         private readonly int _allocSize, _shift, _shiftMask;
         private readonly LurchTableOrder _ordering;

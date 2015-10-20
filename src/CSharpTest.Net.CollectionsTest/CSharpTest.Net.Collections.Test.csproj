@@ -74,7 +74,6 @@
     <Compile Include="Threading\WorkQueue.cs" />
     <Compile Include="TestBTreeDictionary.cs" />
     <Compile Include="TestFactories.cs" />
-    <Compile Include="TestOrderedEnumeration.cs" />
     <Compile Include="TestCrc32.cs" />
     <Compile Include="TestDisposable.cs" />
     <Compile Include="TestFragmentedFile.cs" />
@@ -91,6 +90,7 @@
     <Compile Include="TestVariantSerializer.cs" />
     <Compile Include="TestWeakReferenceT.cs" />
     <Compile Include="TestWorkQueue.cs" />
+    <Compile Include="TestOrderedEnumeration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -23,11 +23,6 @@ namespace CSharpTest.Net.Library.Test
     [TestFixture]
     public class TestLurchTable : TestGenericCollection<TestLurchTable.LurchTableTest<int, string>, KeyValuePair<int, string>, int>
     {
-		public TestLurchTable()
-		{
-			Comparer = new IntComparer ();
-		}
-
 		class StringComparerNoCase : IEqualityComparer<string>
 		{
 			#region IEqualityComparer implementation
@@ -38,16 +33,31 @@ namespace CSharpTest.Net.Library.Test
 
 			public int GetHashCode (string obj)
 			{
-				return obj.GetHashCode ();
+				return obj.ToLower().GetHashCode ();
 			}
 			#endregion
 		}
 
-        public class LurchTableTest<TKey, TValue> : LurchTable<TKey, TValue>
+		public class LurchTableTest<TKey, TValue> : LurchTable<TKey, TValue>, IKeyComparer<TKey>
         {
-            public LurchTableTest() : base(1024, LurchTableOrder.Access)
+			#region IKeyComparer implementation
+
+
+			public IEqualityComparer<TKey> KeyComparer 
+			{ 
+				get {
+					return _comparer;
+				}
+				set {
+					_comparer = value;
+				}
+			}
+
+			#endregion
+
+            public LurchTableTest() : base(1024, LurchTableOrder.Access,null)
             { }
-            public LurchTableTest(LurchTableOrder order) : base(1024, order)
+			public LurchTableTest(LurchTableOrder order,IEqualityComparer<TKey> comparer) : base(1024, order, comparer)
             { }
             public LurchTableTest(IEqualityComparer<TKey> comparer) : base(1024, LurchTableOrder.Access, comparer)
             { }
@@ -66,25 +76,26 @@ namespace CSharpTest.Net.Library.Test
         {
             bool IEqualityComparer<int>.Equals(int x, int y)
             {
-                return false;
+				return x == y;
             }
 
             int IEqualityComparer<int>.GetHashCode(int obj)
             {
-                return 0;
+				return obj.GetHashCode();
             }
         }
+
         [Test]
         public void TestCTors()
         {
             var cmp = new IntComparer();
             const int limit = 5;
 
-            Assert.AreEqual(LurchTableOrder.None, new LurchTable<int, int>(1).Ordering);
-            Assert.AreEqual(LurchTableOrder.Insertion, new LurchTable<int, int>(1, LurchTableOrder.Insertion).Ordering);
+			Assert.AreEqual(LurchTableOrder.None, new LurchTable<int, int>(1,new IntComparer()).Ordering);
+			Assert.AreEqual(LurchTableOrder.Insertion, new LurchTable<int, int>(1, LurchTableOrder.Insertion,new IntComparer()).Ordering);
             Assert.IsTrue(ReferenceEquals(cmp, new LurchTable<int, int>(1, LurchTableOrder.Insertion, cmp).Comparer));
-            Assert.AreEqual(LurchTableOrder.Modified, new LurchTable<int, int>(LurchTableOrder.Modified, limit).Ordering);
-            Assert.AreEqual(limit, new LurchTable<int, int>(LurchTableOrder.Modified, limit).Limit);
+			Assert.AreEqual(LurchTableOrder.Modified, new LurchTable<int, int>(LurchTableOrder.Modified, limit,new IntComparer()).Ordering);
+			Assert.AreEqual(limit, new LurchTable<int, int>(LurchTableOrder.Modified, limit,new IntComparer()).Limit);
             Assert.AreEqual(LurchTableOrder.Access, new LurchTable<int, int>(LurchTableOrder.Access, limit, cmp).Ordering);
             Assert.AreEqual(limit, new LurchTable<int, int>(LurchTableOrder.Access, limit, cmp).Limit);
             Assert.IsTrue(ReferenceEquals(cmp, new LurchTable<int, int>(LurchTableOrder.Access, limit, cmp).Comparer));
@@ -96,7 +107,7 @@ namespace CSharpTest.Net.Library.Test
         [Test]
         public void TestDequeueByInsertion()
         {
-            var test = new LurchTableTest<int, string>(LurchTableOrder.Insertion);
+			var test = new LurchTableTest<int, string>(LurchTableOrder.Insertion,new IntComparer());
             Assert.AreEqual(LurchTableOrder.Insertion, test.Ordering);
             var sample = GetSample();
             Array.Reverse(sample);
@@ -121,7 +132,7 @@ namespace CSharpTest.Net.Library.Test
         [Test]
         public void TestDequeueByModified()
         {
-            var test = new LurchTableTest<int, string>(LurchTableOrder.Modified);
+			var test = new LurchTableTest<int, string>(LurchTableOrder.Modified,new IntComparer());
             Assert.AreEqual(LurchTableOrder.Modified, test.Ordering);
             var sample = GetSample();
             foreach (var item in sample)
@@ -153,7 +164,7 @@ namespace CSharpTest.Net.Library.Test
         [Test]
         public void TestDequeueByAccess()
         {
-            var test = new LurchTableTest<int, string>(LurchTableOrder.Access);
+			var test = new LurchTableTest<int, string>(LurchTableOrder.Access,new IntComparer());
             Assert.AreEqual(LurchTableOrder.Access, test.Ordering);
             var sample = GetSample();
             foreach (var item in sample)
@@ -289,7 +300,7 @@ namespace CSharpTest.Net.Library.Test
                 test.Add(i, i.ToString());
             
             for (int i = 0; i < 10; i++)
-                Assert.IsTrue(test.ContainsKey(i));
+				Assert.IsTrue(test.ContainsKey(i),"Did not contain "+i.ToString());
 
             string cmp;
             for (int i = 0; i < 10; i++)
@@ -298,15 +309,15 @@ namespace CSharpTest.Net.Library.Test
             for (int i = 0; i < 10; i++)
                 Assert.IsTrue(test.Remove(i));
         }
-
+			
         [Test]
         public void TestComparer()
         {
-            var test = new LurchTableTest<string, string>(StringComparer.OrdinalIgnoreCase);
+			var test = new LurchTableTest<string, string>(new StringComparerNoCase());
             test["a"] = "b";
             Assert.IsTrue(test.ContainsKey("A"));
 
-            test = new LurchTableTest<string, string>(StringComparer.OrdinalIgnoreCase);
+			test = new LurchTableTest<string, string>(new StringComparerNoCase());
             test["a"] = "b";
             Assert.IsTrue(test.ContainsKey("A"));
         }
@@ -440,7 +451,7 @@ namespace CSharpTest.Net.Library.Test
         [Test]
         public void TestGetOrAdd()
         {
-			var data = new LurchTableTest<int, string>(new IntComparer());
+			var data = new LurchTableTest<int, string>(new JustCompareIt<int>());
             Assert.AreEqual("a", data.GetOrAdd(1, "a"));
             Assert.AreEqual("a", data.GetOrAdd(1, "b"));
 
@@ -452,7 +463,7 @@ namespace CSharpTest.Net.Library.Test
         [Test]
         public void TestTryRoutines()
         {
-			var data = new LurchTableTest<int, string>(new IntComparer());
+			var data = new LurchTableTest<int, string>(new JustCompareIt<int>());
 
             Assert.IsTrue(data.TryAdd(1, "a"));
             Assert.IsFalse(data.TryAdd(1, "a"));
@@ -481,7 +492,7 @@ namespace CSharpTest.Net.Library.Test
         [Test]
         public void TestInitialize()
         {
-            LurchTableTest<string, string> test = new LurchTableTest<string, string>(StringComparer.Ordinal);
+			LurchTableTest<string, string> test = new LurchTableTest<string, string>(new StringComparerNoCase());
             test["a"] = "b";
             Assert.AreEqual(1, test.Count);
             test.Initialize();
@@ -527,7 +538,7 @@ namespace CSharpTest.Net.Library.Test
         [Test, ExpectedException(typeof(ObjectDisposedException))]
         public void TestDisposed()
         {
-			IConcurrentDictionary<int, string> test = new LurchTableTest<int, string>(new IntComparer());
+            IConcurrentDictionary<int, string> test = new LurchTableTest<int, string>();
             test.Dispose();
             test.Add(1, "");
         }
@@ -547,6 +558,20 @@ namespace CSharpTest.Net.Library.Test
         }
     }
 
+	class GuidComparer : IEqualityComparer<Guid>
+	{
+		#region IEqualityComparer implementation
+		public bool Equals (Guid x, Guid y)
+		{
+			return x.Equals (y);
+		}
+		public int GetHashCode (Guid obj)
+		{
+			return obj.GetHashCode ();
+		}
+		#endregion
+	}
+
     [TestFixture]
     public class TestLurchTableDictionary : CSharpTest.Net.BPlusTree.Test.TestDictionary<LurchTable<Guid, String>, TestLurchTableDictionary.Factory, Guid, String>
     {
@@ -555,7 +580,7 @@ namespace CSharpTest.Net.Library.Test
         {
             public LurchTable<Guid, string> Create()
             {
-                return new LurchTable<Guid, string>(SAMPLE_SIZE, LurchTableOrder.Access);
+				return new LurchTable<Guid, string>(SAMPLE_SIZE, LurchTableOrder.Access, new GuidComparer());
             }
         }
 
